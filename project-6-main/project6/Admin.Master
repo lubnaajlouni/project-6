@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="project6.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <style>
+        .txt {
+            color: black;
+        }
+
+        .sidebar-brand-text {
+            font-weight: normal;
+        }
+
+        a:hover {
+            background-color: #ECECEC;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- Page Wrapper -->
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <ul class="navbar-nav  sidebar sidebar-dark accordion" style="position: sticky; top: 0; height: 400px; background-color: white;" id="accordionSidebar">
+
+                    <!-- Sidebar - Brand -->
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+
+                        <div class="sidebar-brand-text mx-3 txt">Welcome Admin</div>
+                    </a>
+
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item">
+                        <a id="a1" class="nav-link" href="Statics-page.aspx">
+
+                            <span class="txt">Statics</span>
+                        </a>
+
+                    </li>
+                    <!-- Nav Item - Charts -->
+                    <li class="nav-item">
+                        <a id="a2" class="nav-link" href="DonationsRequests.aspx">
+
+                            <span class="txt">Donations Requests</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a id="a3" class="nav-link" href="AdminDonations.aspx">
+
+                            <span class="txt">Requested Donations</span>
+                        </a>
+
+                    </li>
+
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item">
+                        <a id="a4" class="nav-link" href="OrdersRequests.aspx">
+
+                            <span class="txt">Orders Requests</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a id="a5" class="nav-link" href="AdminOrders.aspx">
+
+                            <span class="txt">Requested Orders</span>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="a6" class="nav-link active" href="Users-page.aspx">
+
+                            <span class="txt">Beneficiaries</span>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="a7" class="nav-link" href="Donors-page.aspx">
+
+                            <span class="txt">Donors</span>
+                        </a>
+
+
+                    </li>
+                    <%--                    <li class="nav-item">
+                        <a class="nav-link" href="AdminCatigory.aspx">
+
+                            <span class="txt">Categories</span>
+                        </a>
+                        <hr />
+
+                    </li>--%>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44333/Default">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                            </svg>
+                            <span class="txt">Log out</span>
+                        </a>
+                        <hr />
+
+                    </li>
+
+                </ul>
+
+                <!-- End of Sidebar -->
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content">
+
+                        <!-- Topbar -->
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+
+
+</body>
+</html>

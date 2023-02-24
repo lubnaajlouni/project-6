@@ -1,0 +1,435 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="project6.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Rootuilder</title>
+
+    <link rel="stylesheet" href="/w3css/3/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .cookies-eu-banner {
+            background: #444;
+            color: #fff;
+            padding: 6px;
+            font-size: 13px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+            .cookies-eu-banner button {
+                text-decoration: none;
+                background: #222;
+                color: #fff;
+                border: 1px solid #000;
+                cursor: pointer;
+                padding: 4px 7px;
+                margin: 2px 0;
+                font-size: 13px;
+                font-weight: 700;
+                transition: background 0.07s, color 0.07s, border-color 0.07s;
+            }
+
+                .cookies-eu-banner button:hover {
+                    background: #fff;
+                    color: #222;
+                }
+
+        .hidden {
+            display: none;
+        }
+
+        .site-footer {
+            background-color: #26272b;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+            .site-footer hr {
+                border-top-color: #bbb;
+                opacity: 0.5
+            }
+
+                .site-footer hr.small {
+                    margin: 20px 0
+                }
+
+            .site-footer h6 {
+                color: #fff;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-top: 5px;
+                letter-spacing: 2px
+            }
+
+            .site-footer a {
+                color: #737373;
+            }
+
+                .site-footer a:hover {
+                    color: #3366cc;
+                    text-decoration: none;
+                }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+            .footer-links li {
+                display: block
+            }
+
+            .footer-links a {
+                color: #737373
+            }
+
+                .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+                    color: #3366cc;
+                    text-decoration: none;
+                }
+
+            .footer-links.inline li {
+                display: inline-block
+            }
+
+        .site-footer .social-icons {
+            text-align: right
+        }
+
+            .site-footer .social-icons a {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: 6px;
+                margin-right: 0;
+                border-radius: 100%;
+                background-color: #33353d
+            }
+
+        .copyright-text {
+            margin: 0
+        }
+
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+                .site-footer .copyright-text, .site-footer .social-icons {
+                    text-align: center
+                }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+            .social-icons li {
+                display: inline-block;
+                margin-bottom: 4px
+            }
+
+                .social-icons li.title {
+                    margin-right: 15px;
+                    text-transform: uppercase;
+                    color: #96a2b2;
+                    font-weight: 700;
+                    font-size: 13px
+                }
+
+            .social-icons a {
+                background-color: #eceeef;
+                color: #818a91;
+                font-size: 16px;
+                display: inline-block;
+                line-height: 44px;
+                width: 44px;
+                height: 44px;
+                text-align: center;
+                margin-right: 8px;
+                border-radius: 100%;
+                -webkit-transition: all .2s linear;
+                -o-transition: all .2s linear;
+                transition: all .2s linear
+            }
+
+                .social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+                    color: #fff;
+                    background-color: #29aafe
+                }
+
+            .social-icons.size-sm a {
+                line-height: 34px;
+                height: 34px;
+                width: 34px;
+                font-size: 14px
+            }
+
+            .social-icons a.facebook:hover {
+                background-color: #3b5998
+            }
+
+            .social-icons a.twitter:hover {
+                background-color: #00aced
+            }
+
+            .social-icons a.linkedin:hover {
+                background-color: #007bb6
+            }
+
+            .social-icons a.dribbble:hover {
+                background-color: #ea4c89
+            }
+
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+
+        @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+
+
+            body {
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+
+            .body-content {
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 51px;
+            }
+        }
+    </style>
+
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+</head>
+<body>
+
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #0F3721;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <img style="width: 50px; margin-top: -10px;" src="logo1.png" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li style="font-size: 17px;"><a runat="server" href="~/">Home</a></li>
+                        <li style="font-size: 17px;"><a runat="server" href="~/About">About</a></li>
+                        <li style="font-size: 17px;"><a runat="server" href="~/ContactUs">Contact</a></li>
+
+
+
+
+                    </ul>
+
+
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="font-size: 17px;"><a runat="server" href="~/Account/Register">Register</a></li>
+
+
+                                <li style="font-size: 17px;"><a runat="server" href="~/Account/Login">Log in</a></li>
+
+
+
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="font-size: 17px;"><a runat="server" href="~/myProfile" title="Manage your account">Hello, <%: Context.User.Identity.Name %> !</a></li>
+                                <li style="font-size: 17px;">
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                                <li style="font-size: 17px;"><a runat="server" href="~/myProfile">Profile</a></li>
+
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <!-- Site footer -->
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h6>About</h6>
+                            <p class="text-justify">
+                                Who we are ?
+Working together for the love of trees since 1973. The Tree Council brings everyone together with a shared mission to care for trees and our planet’s future. We inspire and empower organisations, government, communities and individuals with the knowledge and tools to create positive, lasting change at a national and local level.
+                           
+                            </p>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Categories</h6>
+                            <ul class="footer-links">
+                                <li><a href="Donation-tree.aspx?category_id=1">Trees</a></li>
+                                <li><a href="Donation-tree.aspx?category_id=2">Seedlings</a></li>
+                                <li><a href="Donation-tree.aspx?category_id=3">Seeds</a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Quick Links</h6>
+                            <ul class="footer-links">
+                                <li><a href="about.aspx">About Us</a></li>
+                                <li><a href="ContactUs.aspx">Contact Us</a></li>
+                                <li><a href="help.aspx">Help</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">
+                                Copyright &copy; 2023 All Rights Reserved by 
+        
+                               
+
+                                <a href="#">Rootuilder</a>.
+           
+                           
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="https://www.facebook.com/rootbuildersllc/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="https://twitter.com/buildingrootsto" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a class="linkedin" href="https://www.linkedin.com/company/roots-builders/about/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+    <div class="cookies-eu-banner hidden">
+        By clicking ”Accept”, you agree to the storing of cookies on your device to
+      enhance site navigation, analyze site usage, and improve marketing.
+      <button>Accept</button>
+    </div>
+
+</body>
+<script>
+    (() => {
+        const getCookie = (name) => {
+            const value = " " + document.cookie;
+            console.log("value", == ${ value } ==);
+            const parts = value.split(" " + name + "=");
+            return parts.length < 2 ? undefined : parts.pop().split(";").shift();
+        };
+
+        const setCookie = function (name, value, expiryDays, domain, path, secure) {
+            const exdate = new Date();
+            exdate.setHours(
+                exdate.getHours() +
+                (typeof expiryDays !== "number" ? 365 : expiryDays) * 24
+            );
+            document.cookie =
+                name +
+                "=" +
+                value +
+                ";expires=" +
+                exdate.toUTCString() +
+                ";path=" +
+                (path || "/") +
+                (domain ? ";domain=" + domain : "") +
+                (secure ? ";secure" : "");
+        };
+
+        const $cookiesBanner = document.querySelector(".cookies-eu-banner");
+        const $cookiesBannerButton = $cookiesBanner.querySelector("button");
+        const cookieName = "cookiesBanner";
+        const hasCookie = getCookie(cookieName);
+
+        if (!hasCookie) {
+            $cookiesBanner.classList.remove("hidden");
+        }
+
+        $cookiesBannerButton.addEventListener("click", () => {
+            setCookie(cookieName, "closed");
+            $cookiesBanner.remove();
+        });
+    })();
+</script>
+</html>
